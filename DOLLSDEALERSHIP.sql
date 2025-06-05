@@ -80,36 +80,80 @@ INSERT INTO VEHICLES (VIN, MAKE, MODEL, YEAR, COLOR, ODOMETER, SOLD) VALUES
 ('SCFRMFCW3RGL10010', 'Aston Martin', 'DB12 Coupe', 2025, 'Ultramarine Black', '600 miles', FALSE),
 ('JTHH81FF2R5000001', 'Lexus', 'LC 500h Coupe', 2024, 'Infrared', '1,200 miles', FALSE),
 ('WDDUG8DB7RA005678', 'Mercedes-Maybach', 'S680 4MATIC', 2024, 'Rubellite Red', '500 miles', FALSE),
-('YV1ED3GL7R1220045', 'Volvo', 'EX90 Twin Ultimate', 2025, 'Denim Blue', '1,100 miles', FALSE);
+('YV1ED3GL7R1220045', 'Volvo', 'EX90 Twin Ultimate', 2025, 'Denim Blue', '1,100 miles', FALSE),
+('SCCPC1118RHL00001', 'Lotus', 'Emira V6 First Edition', 2025, 'Seneca Blue', '100 miles', TRUE),
+('WDDZH8JB1RA123456', 'Mercedes-Benz', 'E-Class E53 AMG', 2025, 'Graphite Grey Metallic', '250 miles', TRUE),
+('WAUBFCF56RN000111', 'Audi', 'RS 5 Sportback', 2024, 'Tango Red Metallic', '300 miles', TRUE),
+('ZFF90FPA6R0299001', 'Ferrari', 'F8 Tributo', 2024, 'Rosso Fiorano', '150 miles', TRUE),
+('SCAXXX401RC123789', 'Rolls-Royce', 'Phantom Extended', 2025, 'Arctic White', '180 miles', TRUE),
+('WBA33FJ05RCK99999', 'BMW', 'M8 Competition Coupe', 2024, 'Frozen Marina Bay Blue', '220 miles', TRUE),
+('JTHGZ1B20R5023456', 'Lexus', 'IS 500 F Sport Performance', 2025, 'Molten Pearl', '275 miles', TRUE),
+('ZAM45VMA9R0123456', 'Maserati', 'MC20 Cielo', 2024, 'Nero Enigma', '120 miles', TRUE),
+('SADB12EX6RA445566', 'Jaguar', 'F-Type R75 Coupe', 2024, 'British Racing Green', '210 miles', TRUE),
+('4JGFF8FE7RA654321', 'Mercedes-Maybach', 'GLS 600 4MATIC', 2025, 'Obsidian Black Metallic', '200 miles', TRUE);
 
 -- STEP 9 (populate the inventory table)
 -- DOLLS DEALERSHIP (ID = 1)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
 (1, '1HGCM8263RA004001'),
-(1, '5YJSA1E54RF200101');
+(1, '5YJSA1E54RF200101'),
+(1, 'SCCPC1118RHL00001'),
+(1, 'WDDZH8JB1RA123456'),
+(1, 'WAUBFCF56RN000111');
 
 -- LUXURY CARS (ID = 2)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
 (2, 'WBA13BJ09RCK30001'),
-(2, 'SCFRMFCW3RGL10010');
+(2, 'SCFRMFCW3RGL10010'),
+(2, 'ZFF90FPA6R0299001'),
+(2, 'SCAXXX401RC123789');
 
 -- PRETTY GIRL CARS (ID = 3)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
 (3, '4JGFF8KE7RB123456'),
-(3, 'ZFF99SFA6R0298765');
+(3, 'ZFF99SFA6R0298765'),
+(3, 'WBA33FJ05RCK99999');
 
 -- DOLLS AUTO (ID = 4)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
-(4, 'WA1VABFY2RD005001');
+(4, 'WA1VABFY2RD005001'),
+(4, 'JTHGZ1B20R5023456'),
+(4, 'ZAM45VMA9R0123456');
 
 -- FANCY CLUB MOTORS (ID = 5)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
-(5, 'WDDUG8DB7RA005678');
+(5, 'WDDUG8DB7RA005678'),
+(5, 'SADB12EX6RA445566');
 
 -- DIVA RIDES (ID = 6)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
-(6, 'JTHH81FF2R5000001');
+(6, 'JTHH81FF2R5000001'),
+(6, '4JGFF8FE7RA654321');
 
 -- GLAM WHEELS (ID = 7)
 INSERT INTO INVENTORY (dealership_id, VIN) VALUES
 (7, 'YV1ED3GL7R1220045');
+
+-- STEP 10 (populate the sales contract table)
+INSERT INTO SALES_CONTRACT (customer_name, salesTax, recordingFee, processingFee, isFinance, date_of_sale, VIN) VALUES
+-- DOLLS DEALERSHIP (ID = 1)
+('Jasmine Taylor', 7200.00, 200, 350, TRUE, 20250607, 'SCCPC1118RHL00001'),
+('Kayla Johnson', 8600.75, 225, 375, FALSE, 20250607, 'WDDZH8JB1RA123456'),
+('Madison Grant', 7400.50, 215, 360, TRUE, 20250608, 'WAUBFCF56RN000111'),
+
+-- LUXURY CARS (ID = 2)
+('Ariana Singh', 14450.00, 300, 400, FALSE, 20250608, 'ZFF90FPA6R0299001'),
+('Sierra Bennett', 17200.80, 325, 420, TRUE, 20250608, 'SCAXXX401RC123789'),
+
+-- PRETTY GIRL CARS (ID = 3)
+('Natalie Diaz', 9800.25, 230, 365, TRUE, 20250609, 'WBA33FJ05RCK99999'),
+
+-- DOLLS AUTO (ID = 4)
+('Claire Lee', 7100.10, 210, 340, FALSE, 20250609, 'JTHGZ1B20R5023456'),
+('Riley Morgan', 15250.95, 315, 410, TRUE, 20250609, 'ZAM45VMA9R0123456'),
+
+-- FANCY CLUB MOTORS (ID = 5)
+('Lillian Reed', 7800.40, 205, 355, TRUE, 20250610, 'SADB12EX6RA445566'),
+
+-- DIVA RIDES (ID = 6)
+('Maya Carter', 16800.00, 320, 415, FALSE, 20250610, '4JGFF8FE7RA654321');
