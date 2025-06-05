@@ -1,0 +1,6 @@
+SELECT
+*
+FROM
+INVENTORY
+WHERE
+dealership_id = 1;
