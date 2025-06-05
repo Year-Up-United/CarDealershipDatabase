@@ -23,6 +23,7 @@ MAKE VARCHAR(50),
 MODEL VARCHAR(50),
 YEAR  INT,
 COLOR VARCHAR(30),
+ODOMETER VARCHAR(50),
 SOLD BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -33,26 +34,28 @@ CREATE TABLE INVENTORY (
     PRIMARY KEY (dealership_id, VIN)
 );
 
--- STEP 5 (create table for sales contract)
+-- STEP 5 (create table for sales contract CUSTOMER NAME, CUSTOMER EMAIL)
 CREATE TABLE SALES_CONTRACT (
- id INT AUTO_INCREMENT PRIMARY KEY,
+    contract_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    salesTax DECIMAL(10,2),
+    recordingFee INT,
+    processingFee INT,
+    isFinance BOOLEAN,
+    date_of_sale INT,
     VIN CHAR(17),
-    buyer_name VARCHAR(100),
-    sale_date DATE,
-    sale_price DECIMAL(10, 2),
     FOREIGN KEY (VIN) REFERENCES VEHICLES (VIN)
 );
 
 -- STEP 6 (create table for the lease contract)
 CREATE TABLE lease_contracts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    vin VARCHAR(17),
-    lessee_name VARCHAR(100),
-    lease_start_date DATE,
-    lease_end_date DATE,
-    monthly_payment DECIMAL(10, 2),
-    mileage_limit INT,
-    
+    contract_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    extendedEndingValue DECIMAL(10,2),
+    leaseFee DECIMAL(10,2),
+    monthlyPayment DECIMAL(10,2),
+    date_of_sale INT,
+    VIN VARCHAR(17),
     FOREIGN KEY (vin) REFERENCES vehicles(vin)
 );
 
