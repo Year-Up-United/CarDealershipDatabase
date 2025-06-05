@@ -69,6 +69,47 @@ INSERT INTO DEALERSHIPS (name, address, phone) VALUES
 ('DIVA RIDES', '616 ATLANTIC AVE', '212-616-2266'),
 ('GLAM WHEELS', '777 DOLL ST', '212-777-2277');
 
+-- STEP 8 (populate the vehicle table)
+INSERT INTO VEHICLES (VIN, MAKE, MODEL, YEAR, COLOR, ODOMETER, SOLD) VALUES
+('1HGCM8263RA004001', 'Mercedes-Benz', 'S-Class S580', 2024, 'Obsidian Black Metallic', '2,300 miles', FALSE),
+('WBA13BJ09RCK30001', 'BMW', '7 Series 760i xDrive', 2024, 'Mineral White Metallic', '1,800 miles', FALSE),
+('WA1VABFY2RD005001', 'Audi', 'Q8 e-tron Prestige', 2025, 'Chronos Gray Metallic', '900 miles', FALSE),
+('5YJSA1E54RF200101', 'Tesla', 'Model S Plaid', 2025, 'Deep Blue Metallic', '1,000 miles', FALSE),
+('4JGFF8KE7RB123456', 'Mercedes-Benz', 'GLS 580 4MATIC', 2024, 'Emerald Green Metallic', '3,000 miles', FALSE),
+('ZFF99SFA6R0298765', 'Ferrari', 'Roma Spider', 2024, 'Rosso Corsa', '700 miles', FALSE),
+('SCFRMFCW3RGL10010', 'Aston Martin', 'DB12 Coupe', 2025, 'Ultramarine Black', '600 miles', FALSE),
+('JTHH81FF2R5000001', 'Lexus', 'LC 500h Coupe', 2024, 'Infrared', '1,200 miles', FALSE),
+('WDDUG8DB7RA005678', 'Mercedes-Maybach', 'S680 4MATIC', 2024, 'Rubellite Red', '500 miles', FALSE),
+('YV1ED3GL7R1220045', 'Volvo', 'EX90 Twin Ultimate', 2025, 'Denim Blue', '1,100 miles', FALSE);
 
+-- STEP 9 (populate the inventory table)
+-- DOLLS DEALERSHIP (ID = 1)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(1, '1HGCM8263RA004001'),
+(1, '5YJSA1E54RF200101');
 
+-- LUXURY CARS (ID = 2)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(2, 'WBA13BJ09RCK30001'),
+(2, 'SCFRMFCW3RGL10010');
 
+-- PRETTY GIRL CARS (ID = 3)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(3, '4JGFF8KE7RB123456'),
+(3, 'ZFF99SFA6R0298765');
+
+-- DOLLS AUTO (ID = 4)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(4, 'WA1VABFY2RD005001');
+
+-- FANCY CLUB MOTORS (ID = 5)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(5, 'WDDUG8DB7RA005678');
+
+-- DIVA RIDES (ID = 6)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(6, 'JTHH81FF2R5000001');
+
+-- GLAM WHEELS (ID = 7)
+INSERT INTO INVENTORY (dealership_id, VIN) VALUES
+(7, 'YV1ED3GL7R1220045');
